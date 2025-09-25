@@ -6,6 +6,9 @@ import bcrypt, { genSalt } from "bcryptjs";
 import { z } from "zod";
 import jwt from "jsonwebtoken";
 import authConfig from "@config/auth.config";
+
+//Authenticating
+//Implemented RBAC 
 export const loginUser = async (req: Request, res:Response) =>{
     const {email, password} = req.body as z.infer<typeof authSchema.login>
     try{
